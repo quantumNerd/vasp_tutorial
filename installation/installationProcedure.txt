@@ -1,0 +1,24 @@
+VASP 5.4.4 compilation instructions:
+
+1) Apply patches if any
+(cp the patch to and go to the root directory of vasp)
+patch -p0 < patch.5.4.4.16052018
+
+2) Load module
+source ~/Programs/intel/parallel_studio_xe_2019/psxevars.sh
+(or module load name_of_module in clusters)
+
+2) Prepare fftw interfaces to MKL
+(go to the root directory of vasp)
+cp -r $MKLROOT/interfaces/fftw3xf .
+cd fftw3xf
+make libintel64 
+cd ..
+cp arch/makefile.include.linux_intel makefile.include
+
+3) Choose the optimization flag according to your CPU architecture
+(refer to: https://software.intel.com/en-us/articles/performance-tools-for-software-developers-intel-compiler-options-for-sse-generation-and-processor-specific-optimizations)
+sed -i 's/OFLAG\s*=/OFLAG = -xAVX/' makefile.include 
+
+4) Build the code
+make all
