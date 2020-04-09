@@ -1,0 +1,17 @@
+! initialization
+System = H2 molecule
+ISTART = 0; ICHARG = 2    ! new calculation
+
+
+! electronic optimization
+ENCUT = 300
+ISMEAR = 0; SIGMA = 0.1
+EDIFF = 1E-05
+NELM = 80
+
+! ionic relaxation
+NSW=0            ! no ionic movement
+IBRION=-1
+
+! magnetic
+ISPIN=2

@@ -1,0 +1,15 @@
+! initialization
+System = H2 molecule
+ISTART = 0       ! new calculation
+ICHARG = 2
+
+! electronic optimization
+ENCUT = 300
+ISMEAR = 0; SIGMA = 0.1
+
+! ionic relaxation
+IBRION = 2       ! use CG algorithm to converge
+ISIF = 2         ! only relax atoms
+NSW = 50         ! 50 ionic steps
+EDIFFG = -0.02   ! forces smaller 0.02 A/eV
+

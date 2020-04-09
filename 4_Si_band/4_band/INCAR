@@ -1,0 +1,11 @@
+! initialization
+System = bulk Si
+ISTART = 0; ICHARG = 11      ! charge read from CHGCAR
+
+! electronic optimization
+ENCUT = 250
+ISMEAR = 0; SIGMA = 0.1;
+
+! DOS
+LORBIT = 11      ! output DOSCAR and PROCAR (total DOS and partial DOS)
+
