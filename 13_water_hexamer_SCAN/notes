@@ -1,0 +1,17 @@
+SCAN: Strongly-Constrained and Appropriately-Normed meta-GGA
+
+1. SCAN functional: intermediate VdW captured
+    * In INCAR, specify:
+	METAGGA = SCAN
+	LASPH = T
+	ADDGRID = T
+    * Use PBE pseudopotential
+    * POTCAR should contain (grep kinetic POTCAR):                   
+	kinetic energy-density
+	mkinetic energy-density pseudized
+	kinetic energy density (partial)
+
+2. SCAN+rVV10: add long range VdW 
+    * Further add the following lines in the INCAR:
+	LUSE_VDW = T
+	BPARAM = 15.7

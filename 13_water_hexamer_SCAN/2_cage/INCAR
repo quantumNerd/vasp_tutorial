@@ -1,0 +1,15 @@
+ISTART=0 ; ICHARG=2
+
+PREC = Accurate  ! standard precision 
+ENMAX = 450      ! cutoff should be set manually
+ISMEAR = 0 ; SIGMA = 0.05
+LREAL= .False.
+EDIFF = 1E-7
+NELM = 100
+
+IBRION = -1      ! no ionic steps
+NSW = 0          ! no ionic steps
+
+METAGGA=SCAN
+LASPH=T
+ADDGRID=T
